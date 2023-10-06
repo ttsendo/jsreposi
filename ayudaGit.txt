@@ -1,0 +1,16 @@
+echo "# jsreposi" >> README.md 
+git init 
+git add README.md 
+git commit -m "primer compromiso" 
+git rama -M principal 
+git remoto agregar origen https://github.com/ttsendo/jsreposi.git
+ git push - u origen principal
+
+
+
+
+ git init
+ git add .
+ git commit -m "Primer commit"
+ git config --user.email scastao01@soy.sena.edu.co
+ git config --user.name tts.sena.edu.co
