@@ -15,7 +15,10 @@ VINCULAR EL PROYECTO
  git config --user.email scastao01@soy.sena.edu.co
  git config --user.name ttsendo.sena.edu.co
 
- ACTUALIZAR EL REPOSITORIO 
+ACTUALIZAR EL REPOSITORIO 
  git add .
  git commit -m "Validaciones"
  git push -u origin master
+
+CLONAR
+git clone https://
