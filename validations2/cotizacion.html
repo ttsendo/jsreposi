@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculos y Facturacion</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>  
+</head>
+<body>
+    <select class="form-select form-select-sm" id="select1">
+        <option value="">Seleccione el producto</option>
+        <option value="2">Aceite</option>
+        <option value="3">Agua</option>
+        <option value="4">Azucar</option>
+      </select>
+      <br>
+      <label for="">Precio</label>
+      <input type="text" id="precio" min="0" onkeyup="calcularSubtotal()" onkeydown="calcularSubtotal()" onkeypress="calcularSubtotal()">
+      <label for="">Cantidad</label>
+      <input type="text" id="cantidad" min="0" onkeyup="calcularSubtotal()" onkeydown="calcularSubtotal()" onkeypress="calcularSubtotal()">
+      <label for="">Subtotal</label>
+      <input type="text" id="subtotal" readonly >   
+      <br>
+      <button id="Calcular">Calcular</button>
+      <script src="/validations2/js/funciones.js"></script>
+</body>
+</html>

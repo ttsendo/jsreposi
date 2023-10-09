@@ -13,7 +13,7 @@ VINCULAR EL PROYECTO
  git add .
  git commit -m "Primer commit"
  git config --user.email scastao01@soy.sena.edu.co
- git config --user.name ttsendo.sena.edu.co
+ git config --user.name ttsendo
 
 ACTUALIZAR EL REPOSITORIO 
  git add .
