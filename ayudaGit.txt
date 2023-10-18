@@ -23,6 +23,3 @@ ACTUALIZAR EL REPOSITORIO
 CLONAR
 git clone https://
 
-CONECTAR A MONGO db
-
-mongodb+srv://sebascastanoz:1234@cluster0.47ccbnu.mongodb.net/

@@ -1,0 +1,95 @@
+CONECTAR A MONGO db
+mongodb+srv://sebascastanoz:1234@cluster0.47ccbnu.mongodb.net/
+
+//Listar todas las bases de datos
+show dbs;
+
+//crear o usar una db
+
+use mongo_2670689;
+// crear una coleccion
+db.createCollection("Aprendiz")
+
+//Insertar datos
+use("mongo_2670689")
+db.Aprendiz.insertOne({"documento": 1111, "nombre":"Diego","apellido":"Lopez"})
+
+//Listar todos los datos
+use("mongo_2670689")
+db.Aprendiz.find()
+
+//Modificar un registro
+use("mongo_2670689")
+db.Aprendiz.update
+
+db.Aprendiz.insertOne({"documento":7777, "nombre":"jenny"
+, "apellido":"perez","direccion":"minorista"
+})
+
+//Consulta por un campo
+use("mongo_2670689")
+db.Aprendiz.find({"documento":7777})
+
+// Consultar el primer objeto de la coleccion
+use("mongo_2670689")
+db.Aprendiz.findOne();
+
+
+//Modificar las direcciones
+use("mongo_2670689")
+db.Aprendiz.updateMany({"nombre":"jenny"},
+{$set: {"direccion":"Sena Minorista"}})
+
+//Consultar Numero de Documentos
+use("mongo_2670689")
+db.Aprendiz.countDocuments();
+
+//Eliminar un Documento
+use("mongo_2670689")
+db.Aprendiz.deleteOne({"documento": 7777});
+
+//Eliminar multiples documentos
+use("mongo_2670689");
+db.Aprendiz.deleteMany({"documento":1111});
+
+use("mongo_2670689");
+db.Aprendiz.deleteMany({"documento":0000});
+
+//ordenar nombre ascendente
+use("mongo_2670689");
+db.Aprendiz.find().sort({"nombre":1},{"apellido":1});
+
+
+//Recorrer los datos
+use("mongo_2670689");
+db.Aprendiz.find().forEach(aprendiz => 
+    print("Nombre: "+aprendiz.nombre+" "+
+    "Apellido: "+aprendiz.apellido));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//DELETE PARA REGISTROS DROP PARA TABLAS
