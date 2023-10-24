@@ -1,0 +1,190 @@
+use ('ventas_VidaKids');
+
+/* VENTAS */
+
+//Clientes
+
+db.createCollection("Clientes");
+
+use ('ventas_VidaKids');
+db.Clientes.insertOne(
+    {
+        "id_Cliente": 1,
+        "nombre_Cliente": "Bjem",
+        "contrasena_Cliente": "1234",
+        "correo_Cliente": "bjem@gamil.com",
+        "direccion_Cliente": "crra55 sur #8 99",
+        "fecha_registro_Cliente": "03/02/2023",
+        "estado": "Activo"
+    }
+);
+
+use ('ventas_VidaKids');
+db.Clientes.insertOne({
+    "id_Cliente" : 2,
+    "nombre_Cliente":"Andres",
+    "contrasena_Cliente":"4321",
+    "correo_Cliente" : "andres@gamil.com",
+    "direccion_Cliente" : "cra 45 E 12",
+    "fecha_registro_Cliente":"20/08/2023",
+    "estado":"Inactivo"
+});
+
+//ACTUALIZAR//
+use ('ventas_VidaKids');
+db.Clientes.updateOne(
+    { "id_Cliente": 1 },
+    { $set: { "contrasena_Cliente": "5678" } }
+  );
+  //ELIMINAR//
+  use ('ventas_VidaKids');
+  db.Clientes.deleteOne({ "correo_Cliente" : "andres@gamil.com" });
+  //CONSULTAR//
+  use ('ventas_VidaKids');
+  db.Clientes.find();
+  //CONSULTA ESPECIFICA
+  use ('ventas_VidaKids');
+  db.Clientes.findOne({ "estado": "Inactivo" })
+  //CANTIDAD DOCS
+var docsTot = db.Clientes.count(); 
+print("La cantidad total de documentos en la colección es: " + docsTot); 
+
+//Ventas
+
+use ('ventas_VidaKids');
+db.createCollection("Ventas");
+
+use ('ventas_VidaKids');
+db.Ventas.insertOne(
+    {
+        "id_Ventas": 12, 
+        "id_Cliente": 1, 
+        "Fecha_hora_Venta": "15-10-2023", 
+        "Monto_total": "85000$",
+        "Estado_Venta": "Activo"
+    }
+    
+);
+
+use ('ventas_VidaKids');
+db.Ventas.insertOne(
+    {
+        "id_Ventas": 20, 
+        "id_Cliente": 2, 
+        "Fecha_hora_Venta": "20-03-2023", 
+        "Monto_total": "50000$",
+        "Estado_Venta": "Inactivo"
+    }
+    
+);
+
+//ACTUALIZAR//
+use ('ventas_VidaKids');
+db.Ventas.updateOne(
+    { "id_Ventas": 12 },
+    { $set: { "Estado_Venta": "Inactivo" } }
+  );
+//ELIMINAR//  
+  use ('ventas_VidaKids');
+  db.Ventas.deleteOne({ "id_Ventas": 20 });
+//CONSULTAR//
+  use ('ventas_VidaKids');
+  db.Ventas.find();
+//CONSULTA ESPECIFICA//  
+  use ('ventas_VidaKids');
+  db.Ventas.findOne({ "id_Ventas": 12 })
+//CONSULTAR TOTAL
+use('ventas_Vidakids'); 
+var totalDocumentos = db.Ventas.countDocuments(); 
+print("La cantidad total de documentos en la colección es: " + totalDocumentos); 
+
+
+//Categoria de Productos
+use ('ventas_VidaKids');
+db.createCollection("Categoria_Productos");
+
+use ('ventas_VidaKids');
+db.Categoria_Productos.insertOne(
+    {
+        "id_Cat_Prod": 3, 
+        "nombre_Cat_Prod": "Ropa", 
+        "descripcion_Cat_Prod": "Aqui encontraras todo lo relacionado con el merch"
+    }
+);
+
+use ('ventas_VidaKids');
+db.Categoria_Productos.insertOne(
+    {
+        "id_Cat_Prod": 8, 
+        "nombre_Cat_Prod": "accesorios", 
+        "descripcion_Cat_Prod": "Aqui encontraras todo lo relacionado con los accesorios"
+    }
+);
+
+//ACTUALIZAR//
+use ('ventas_VidaKids');
+db.Categoria_Productos.updateOne(
+    { "id_Cat_Prod": 8 },
+    { $set: { "nombre_Cat_Prod": "gorras" } }
+  );
+//ELIMINAR//  
+  use ('ventas_VidaKids');
+  db.Categoria_Productos.deleteOne({ "id_Cat_Prod": 3});
+//CONSULTAR//
+  use ('ventas_VidaKids');
+  db.Categoria_Productos.find();
+//CONSULTA ESPECIFICA//  
+  use ('ventas_VidaKids');
+  db.Categoria_Productos.findOne({ "descripcion_Cat_Prod": "Aqui encontraras todo lo relacionado con los accesorios" })
+//CONSULTAR TOTAL
+use('ventas_Vidakids'); 
+var totalDocumentos = db.Categoria_Productos.countDocuments(); 
+print("La cantidad total de documentos en la colección es: " + totalDocumentos); 
+
+  
+  // PRODUCTOS
+
+  use ('ventas_VidaKids');
+  db.createCollection("Productos");
+  use ('ventas_VidaKids');
+  db.Productos.insertMany([
+    {
+      "id_Producto": 10,
+      "nombre_Producto": "Muñecas",
+      "Stock": 30,
+      "Precio_Producto": "35000$",
+      "Fecha_Modificacion": "16-07-2022",
+      "id_Categoria": 4,
+      "Estado": "Activo"
+    },
+    {
+      "id_Producto": 11,
+      "nombre_Producto": "camiseta vdk",
+      "Stock": 20,
+      "Precio_Producto": "45000$",
+      "Fecha_Modificacion": "16-07-2022",
+      "id_Categoria": 5,
+      "Estado": "Activo"
+    }
+  ]);
+
+  
+//ACTUALIZAR//
+use ('ventas_VidaKids');
+db.Productos.updateOne(
+    { "id_Producto": 11 },
+    { $set: { "nombre_Producto": "manilla vdk" } }
+  );
+//ELIMINAR//  
+  use ('ventas_VidaKids');
+  db.Productos.deleteOne({ "id_Producto": 10});
+//CONSULTAR//
+  use ('ventas_VidaKids');
+  db.Productos.find();
+//CONSULTA ESPECIFICA//  
+  use ('ventas_VidaKids');
+  db.Productos.findOne({ "Fecha_Modificacion": "16-07-2022" })
+//CONSULTAR TOTAL
+use('ventas_Vidakids'); 
+var totalDocumentos = db.Categoria_Productos.countDocuments(); 
+print("La cantidad total de documentos en la colección es: " + totalDocumentos); 
