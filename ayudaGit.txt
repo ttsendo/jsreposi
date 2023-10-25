@@ -23,3 +23,10 @@ ACTUALIZAR EL REPOSITORIO
 CLONAR
 git clone https://
 
+
+
+
+//EXTRAS // comandos de CMD 
+ipconfig
+tracert (url)
+ping (url)
